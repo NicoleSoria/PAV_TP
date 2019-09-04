@@ -3,6 +3,6 @@
 # Integrantes
 
 - Tamara Nicole Soria Legajo: 69684
--
+- Sosa Pedro Martin Legajo: 76951
 -
 -
