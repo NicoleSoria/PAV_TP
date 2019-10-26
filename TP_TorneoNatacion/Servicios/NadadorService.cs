@@ -85,7 +85,7 @@ namespace TP_TorneoNatacion.Servicios
         public List<NadadorModel> buscarNadador(string dni)
         {
             List<NadadorModel> listaNadadores = new List<NadadorModel>();
-            var consulta = "SELECT * FROM Nadadores WHERE dni like @param1 + '%' ";
+            var consulta = "SELECT * FROM Nadadores WHERE nombre like @param1 + '%' ";
 
             var resultado = DBHelper.getDBHelper().ConsultarSQLConParametros(consulta, new object[] { dni });
 

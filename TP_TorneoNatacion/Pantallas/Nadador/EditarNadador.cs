@@ -25,6 +25,9 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
             clubService = new Servicios.ClubService();
             profesorService = new Servicios.ProfesorService();
             cargarTiposDoc();
+            cargarProfesores();
+            cargarClubs();
+
         }
 
         public void cargarTiposDoc()
@@ -33,6 +36,22 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
             comboTipoDoc.DisplayMember = "nombre";
             comboTipoDoc.ValueMember = "id_tipoDoc";
             comboTipoDoc.SelectedIndex = -1;
+        }
+
+        public void cargarClubs()
+        {
+            comboClubs.DataSource = DBHelper.getDBHelper().ConsultaSQL("SELECT * FROM Clubs");
+            comboClubs.DisplayMember = "nombre";
+            comboClubs.ValueMember = "id_Club";
+            comboClubs.SelectedIndex = -1;
+        }
+
+        public void cargarProfesores()
+        {
+            comboProfesores.DataSource = DBHelper.getDBHelper().ConsultaSQL("SELECT * FROM Profesores");
+            comboProfesores.DisplayMember = "nombre";
+            comboProfesores.ValueMember = "id_Profesor";
+            comboProfesores.SelectedIndex = -1;
         }
 
         public void editarNadador()
@@ -62,15 +81,15 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
             txtNombre.Text = nadador.nombre;
             comboTipoDoc.SelectedValue = nadador.tipoDoc;
             txtDoc.Text = nadador.dni;
-            txtClub.Text = nadador.club;
+            comboClubs.SelectedText = nadador.club;
             txt_id.Text = nadador.id_Nadador.ToString();
-            txtProfesor.Text = nadador.profesor.ToString();
+            comboProfesores.SelectedText = nadador.profesor.ToString();
 
         }
 
         public int buscarClub()
         {
-            var resultado = clubService.buscarClub(txtClub.Text);
+            var resultado = clubService.buscarClub(comboClubs.SelectedValue.ToString());
             var id_club = 0;
 
             if (resultado != null)
@@ -85,7 +104,7 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
 
         public int buscarProfesor()
         {
-            var resultado = profesorService.buscarProfesor(txtProfesor.Text);
+            var resultado = profesorService.buscarProfesor(comboProfesores.SelectedValue.ToString());
             var id_Profesor = 0;
 
             if (resultado != null)

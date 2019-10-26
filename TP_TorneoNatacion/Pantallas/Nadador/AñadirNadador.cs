@@ -24,6 +24,8 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
             clubService = new Servicios.ClubService();
             profesorService = new Servicios.ProfesorService();
             cargarTiposDoc();
+            cargarClubs();
+            cargarProfesores();
         }
 
         public void cargarTiposDoc()
@@ -32,6 +34,22 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
             comboTipoDoc.DisplayMember = "nombre";
             comboTipoDoc.ValueMember = "id_tipoDoc";
             comboTipoDoc.SelectedIndex = -1;
+        }
+
+        public void cargarClubs()
+        {
+            comboClubs.DataSource = DBHelper.getDBHelper().ConsultaSQL("SELECT * FROM Clubs");
+            comboClubs.DisplayMember = "nombre";
+            comboClubs.ValueMember = "id_Club";
+            comboClubs.SelectedIndex = -1;
+        }
+
+        public void cargarProfesores()
+        {
+            comboProfesores.DataSource = DBHelper.getDBHelper().ConsultaSQL("SELECT * FROM Profesores");
+            comboProfesores.DisplayMember = "nombre";
+            comboProfesores.ValueMember = "id_Profesor";
+            comboProfesores.SelectedIndex = -1;
         }
 
         private void BtnAñadir_Click(object sender, EventArgs e)
@@ -55,7 +73,7 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
 
         public int buscarClub()
         {
-            var resultado = clubService.buscarClub(txtClub.Text);
+            var resultado = clubService.buscarClub(comboClubs.SelectedText);
             var id_club = 0;
 
             if(resultado != null)
@@ -70,7 +88,7 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
 
         public int buscarProfesor()
         {
-            var resultado = profesorService.buscarProfesor(txtProfesor.Text);
+            var resultado = profesorService.buscarProfesor(comboProfesores.SelectedText);
             var id_Profesor = 0;
 
             if (resultado != null)

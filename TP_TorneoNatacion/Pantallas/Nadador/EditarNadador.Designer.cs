@@ -30,17 +30,17 @@
         {
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtProfesor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboTipoDoc = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtClub = new System.Windows.Forms.TextBox();
             this.txtDoc = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.numero = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
+            this.comboProfesores = new System.Windows.Forms.ComboBox();
+            this.comboClubs = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -64,13 +64,6 @@
             this.label5.Size = new System.Drawing.Size(213, 42);
             this.label5.TabIndex = 56;
             this.label5.Text = "Editar Club";
-            // 
-            // txtProfesor
-            // 
-            this.txtProfesor.Location = new System.Drawing.Point(483, 194);
-            this.txtProfesor.Name = "txtProfesor";
-            this.txtProfesor.Size = new System.Drawing.Size(123, 20);
-            this.txtProfesor.TabIndex = 66;
             // 
             // label4
             // 
@@ -99,13 +92,6 @@
             this.label3.Size = new System.Drawing.Size(140, 20);
             this.label3.TabIndex = 63;
             this.label3.Text = "Tipo Documento";
-            // 
-            // txtClub
-            // 
-            this.txtClub.Location = new System.Drawing.Point(483, 154);
-            this.txtClub.Name = "txtClub";
-            this.txtClub.Size = new System.Drawing.Size(123, 20);
-            this.txtClub.TabIndex = 62;
             // 
             // txtDoc
             // 
@@ -158,18 +144,34 @@
             this.txt_id.Size = new System.Drawing.Size(100, 20);
             this.txt_id.TabIndex = 67;
             // 
+            // comboProfesores
+            // 
+            this.comboProfesores.FormattingEnabled = true;
+            this.comboProfesores.Location = new System.Drawing.Point(492, 194);
+            this.comboProfesores.Name = "comboProfesores";
+            this.comboProfesores.Size = new System.Drawing.Size(121, 21);
+            this.comboProfesores.TabIndex = 69;
+            // 
+            // comboClubs
+            // 
+            this.comboClubs.FormattingEnabled = true;
+            this.comboClubs.Location = new System.Drawing.Point(492, 152);
+            this.comboClubs.Name = "comboClubs";
+            this.comboClubs.Size = new System.Drawing.Size(121, 21);
+            this.comboClubs.TabIndex = 68;
+            // 
             // EditarNadador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(649, 452);
+            this.Controls.Add(this.comboProfesores);
+            this.Controls.Add(this.comboClubs);
             this.Controls.Add(this.txt_id);
-            this.Controls.Add(this.txtProfesor);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboTipoDoc);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtClub);
             this.Controls.Add(this.txtDoc);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.numero);
@@ -187,16 +189,16 @@
         #endregion
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtProfesor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboTipoDoc;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtClub;
         private System.Windows.Forms.TextBox txtDoc;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label numero;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_id;
+        private System.Windows.Forms.ComboBox comboProfesores;
+        private System.Windows.Forms.ComboBox comboClubs;
     }
 }

@@ -35,11 +35,11 @@
             this.numero = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtClub = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboTipoDoc = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtProfesor = new System.Windows.Forms.TextBox();
+            this.comboClubs = new System.Windows.Forms.ComboBox();
+            this.comboProfesores = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnAñadir
@@ -108,13 +108,6 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Nombre y Apellido";
             // 
-            // txtClub
-            // 
-            this.txtClub.Location = new System.Drawing.Point(474, 120);
-            this.txtClub.Name = "txtClub";
-            this.txtClub.Size = new System.Drawing.Size(123, 20);
-            this.txtClub.TabIndex = 35;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -143,12 +136,21 @@
             this.label4.TabIndex = 38;
             this.label4.Text = "Profesor";
             // 
-            // txtProfesor
+            // comboClubs
             // 
-            this.txtProfesor.Location = new System.Drawing.Point(474, 160);
-            this.txtProfesor.Name = "txtProfesor";
-            this.txtProfesor.Size = new System.Drawing.Size(123, 20);
-            this.txtProfesor.TabIndex = 39;
+            this.comboClubs.FormattingEnabled = true;
+            this.comboClubs.Location = new System.Drawing.Point(485, 116);
+            this.comboClubs.Name = "comboClubs";
+            this.comboClubs.Size = new System.Drawing.Size(121, 21);
+            this.comboClubs.TabIndex = 39;
+            // 
+            // comboProfesores
+            // 
+            this.comboProfesores.FormattingEnabled = true;
+            this.comboProfesores.Location = new System.Drawing.Point(485, 158);
+            this.comboProfesores.Name = "comboProfesores";
+            this.comboProfesores.Size = new System.Drawing.Size(121, 21);
+            this.comboProfesores.TabIndex = 40;
             // 
             // AñadirNadador
             // 
@@ -156,11 +158,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(629, 359);
-            this.Controls.Add(this.txtProfesor);
+            this.Controls.Add(this.comboProfesores);
+            this.Controls.Add(this.comboClubs);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboTipoDoc);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtClub);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDoc);
@@ -183,10 +185,10 @@
         private System.Windows.Forms.Label numero;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtClub;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboTipoDoc;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtProfesor;
+        private System.Windows.Forms.ComboBox comboClubs;
+        private System.Windows.Forms.ComboBox comboProfesores;
     }
 }
