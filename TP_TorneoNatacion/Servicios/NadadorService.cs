@@ -82,12 +82,12 @@ namespace TP_TorneoNatacion.Servicios
             }
         }
 
-        public List<NadadorModel> buscarNadador(string dni)
+        public List<NadadorModel> buscarNadador(string nombre)
         {
             List<NadadorModel> listaNadadores = new List<NadadorModel>();
             var consulta = "SELECT * FROM Nadadores WHERE nombre like @param1 + '%' ";
 
-            var resultado = DBHelper.getDBHelper().ConsultarSQLConParametros(consulta, new object[] { dni });
+            var resultado = DBHelper.getDBHelper().ConsultarSQLConParametros(consulta, new object[] { nombre });
 
             if (resultado.Rows.Count > 0)
             {
@@ -103,10 +103,36 @@ namespace TP_TorneoNatacion.Servicios
                     listaNadadores.Add(encontradoClub);
 
                 }
-
             }
-
             return listaNadadores;
+        }
+
+        public bool guardarNadadorXEspecialidad(int idNadador, int idEspecialidad)
+        {
+            var consulta = " INSERT INTO NadadorXEspecialidad (id_Nadador, id_Especialidad) VALUES (@param1, @param2); ";
+
+            var resultado = DBHelper.getDBHelper().ejecutarSQLParametros(consulta, new object[] { idNadador, idEspecialidad });
+
+            if( resultado != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public DataTable buscarNadadorXEspecialidad(int id_Nadador)
+        {
+            var consulta = " SELECT Especialidades.nombre Especialidad" +
+                             " FROM Especialidades, NadadorXEspecialidad" +
+                             " WHERE NadadorXEspecialidad.id_Nadador = @param1 AND " +
+                             "Especialidades.id_Especialidad = NadadorXEspecialidad.id_Especialidad ";
+
+            var resultado = DBHelper.getDBHelper().ConsultarSQLConParametros(consulta, new object[] { id_Nadador });
+
+            return resultado;
 
         }
     }

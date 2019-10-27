@@ -59,6 +59,9 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
 
             var resultado = nadadorService.saveNadador(txtNombre.Text.Trim(), (int)comboTipoDoc.SelectedValue, txtDoc.Text.Trim(), id_Club, id_Profesor);
 
+           
+
+
             if (resultado == true)
             {
                 MessageBox.Show("Se registro exitosamente el nuevo nadador!", "", MessageBoxButtons.OK);
@@ -73,7 +76,7 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
 
         public int buscarClub()
         {
-            var resultado = clubService.buscarClub(comboClubs.SelectedText);
+            var resultado = clubService.buscarClub(comboClubs.Text);
             var id_club = 0;
 
             if(resultado != null)
@@ -88,7 +91,7 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
 
         public int buscarProfesor()
         {
-            var resultado = profesorService.buscarProfesor(comboProfesores.SelectedText);
+            var resultado = profesorService.buscarProfesor(comboProfesores.Text);
             var id_Profesor = 0;
 
             if (resultado != null)
@@ -100,5 +103,6 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
             }
             return id_Profesor;
         }
+
     }
 }

@@ -58,7 +58,7 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
         {
             var id_Nadador = int.Parse(txt_id.Text);
             var id_Club = buscarClub();
-            var id_Profesor = buscarClub();
+            var id_Profesor = buscarProfesor();
 
             var resultado = nadadorService.editarNadador(id_Nadador, txtNombre.Text, (int)comboTipoDoc.SelectedValue ,txtDoc.Text , id_Club, id_Profesor);
 
@@ -81,15 +81,15 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
             txtNombre.Text = nadador.nombre;
             comboTipoDoc.SelectedValue = nadador.tipoDoc;
             txtDoc.Text = nadador.dni;
-            comboClubs.SelectedText = nadador.club;
+            comboClubs.Text = nadador.club;
             txt_id.Text = nadador.id_Nadador.ToString();
-            comboProfesores.SelectedText = nadador.profesor.ToString();
+            comboProfesores.Text = nadador.profesor;
 
         }
 
         public int buscarClub()
         {
-            var resultado = clubService.buscarClub(comboClubs.SelectedValue.ToString());
+            var resultado = clubService.buscarClub(comboClubs.Text);
             var id_club = 0;
 
             if (resultado != null)
@@ -104,7 +104,7 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
 
         public int buscarProfesor()
         {
-            var resultado = profesorService.buscarProfesor(comboProfesores.SelectedValue.ToString());
+            var resultado = profesorService.buscarProfesor(comboProfesores.Text);
             var id_Profesor = 0;
 
             if (resultado != null)

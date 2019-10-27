@@ -71,6 +71,20 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
             }
         }
 
+        //public void verEspecialidadNad()
+        //{
+        //    DataGridViewRow seleccionado = GrillaNadadores.CurrentRow;
+        //    var id = Convert.ToInt32(seleccionado.Cells["id_Nadador"].Value);
+        //    var nombreNadador = seleccionado.Cells["Nadador"].Value.ToString();
+
+        //    if(seleccionado != null)
+        //    {
+        //        Especialidad pantallaEspecialidad = new Especialidad();
+        //        pantallaEspecialidad.getNadador(id, nombreNadador);
+        //        pantallaEspecialidad.ShowDialog();
+        //    }
+        //}
+
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             editarNadador();
@@ -90,5 +104,10 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
                 GrillaNadadores.DataSource = resultado;
             }
         }
+
+        //private void BtnEspecialidad_Click(object sender, EventArgs e)
+        //{
+        //    verEspecialidadNad();
+        //}
     }
 }
