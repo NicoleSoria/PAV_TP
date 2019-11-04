@@ -106,18 +106,29 @@ namespace TP_TorneoNatacion.Pantallas.Torneo
 
             nuevaInscripcion.especialidad = new List<EspecialidadModel>();
 
-            foreach (DataGridViewRow fila in grillaEspecSeleccionadas.Rows)
+            for( var i = 0; i < (grillaEspecSeleccionadas.Rows.Count - 1); i++)
             {
-                EspecialidadModel especialidad = new EspecialidadModel();
-
                 EspecialidadModel encontrada = new EspecialidadModel();
-                encontrada = especialidadService.buscarEspecialidad(fila.Cells[0].Value.ToString());
 
-                especialidad.id_Especialidad = encontrada.id_Especialidad;
-                especialidad.nombre = encontrada.nombre;
+                encontrada = especialidadService.buscarEspecialidad(grillaEspecSeleccionadas.Rows[i].Cells[0].Value.ToString());
 
-                nuevaInscripcion.especialidad.Add(especialidad);
+                //especialidad.id_Especialidad = encontrada.id_Especialidad;
+                //especialidad.nombre = encontrada.nombre;
+
+                nuevaInscripcion.especialidad.Add(encontrada);
             }
+
+            //foreach (DataGridViewRow fila in grillaEspecSeleccionadas.Rows)
+            //{
+            //    EspecialidadModel encontrada = new EspecialidadModel();
+
+            //    encontrada = especialidadService.buscarEspecialidad(fila.Cells[0].Value.ToString());
+
+            //    //especialidad.id_Especialidad = encontrada.id_Especialidad;
+            //    //especialidad.nombre = encontrada.nombre;
+
+            //    nuevaInscripcion.especialidad.Add(encontrada);
+            //}
 
             var resultado = torneoService.guardarInscripcion(nuevaInscripcion);
 
