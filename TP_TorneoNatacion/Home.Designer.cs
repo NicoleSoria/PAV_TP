@@ -54,6 +54,7 @@
             this.btnTorneo.TabIndex = 10;
             this.btnTorneo.Text = "Torneos";
             this.btnTorneo.UseVisualStyleBackColor = true;
+            this.btnTorneo.Click += new System.EventHandler(this.BtnTorneo_Click);
             // 
             // btnEspecialidad
             // 

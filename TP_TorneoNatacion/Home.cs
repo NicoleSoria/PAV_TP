@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_TorneoNatacion.Pantallas;
 using TP_TorneoNatacion.Pantallas.Nadador;
+using TP_TorneoNatacion.Pantallas.Torneo;
 
 namespace TP_TorneoNatacion
 {
@@ -30,6 +31,12 @@ namespace TP_TorneoNatacion
         {
             Nadador nadador = new Nadador();
             nadador.ShowDialog();
+        }
+
+        private void BtnTorneo_Click(object sender, EventArgs e)
+        {
+            TorneoHome torneo = new TorneoHome();
+            torneo.ShowDialog();
         }
     }
 }

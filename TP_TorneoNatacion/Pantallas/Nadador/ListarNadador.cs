@@ -45,7 +45,6 @@ namespace TP_TorneoNatacion.Pantallas.Nadador
                 }
             }
 
-
         }
 
         public void editarNadador()

@@ -93,14 +93,14 @@ namespace TP_TorneoNatacion.Servicios
             {
                 foreach (DataRow row in resultado.Rows)
                 {
-                    NadadorModel encontradoClub = new NadadorModel();
+                    NadadorModel encontradoNadador = new NadadorModel();
 
-                    encontradoClub.id_Nadador = Convert.ToInt32(row[0]);
-                    encontradoClub.nombre = row[1].ToString();
-                    encontradoClub.dni = row[2].ToString();
-                    encontradoClub.club = row[3].ToString();
+                    encontradoNadador.id_Nadador = Convert.ToInt32(row[0]);
+                    encontradoNadador.nombre = row[1].ToString();
+                    encontradoNadador.dni = row[2].ToString();
+                    encontradoNadador.club = row[3].ToString();
 
-                    listaNadadores.Add(encontradoClub);
+                    listaNadadores.Add(encontradoNadador);
 
                 }
             }

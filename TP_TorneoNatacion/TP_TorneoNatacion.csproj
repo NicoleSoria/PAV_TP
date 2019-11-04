@@ -54,13 +54,30 @@
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Club.cs" />
+    <Compile Include="Modelos\EspecialidadModel.cs" />
+    <Compile Include="Modelos\FechaModel.cs" />
+    <Compile Include="Modelos\InscripcionModel.cs" />
     <Compile Include="Modelos\Profesor.cs" />
+    <Compile Include="Modelos\TorneoModel.cs" />
+    <Compile Include="Pantallas\Torneo\Inscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Torneo\Inscripcion.Designer.cs">
+      <DependentUpon>Inscripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\Nadador\Especialidad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pantallas\Nadador\Especialidad.Designer.cs">
       <DependentUpon>Especialidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\Torneo\TorneoHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Torneo\TorneoHome.Designer.cs">
+      <DependentUpon>TorneoHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\EspecialidadService.cs" />
     <Compile Include="Servicios\loguinService.cs" />
     <Compile Include="Modelos\Nadador.cs" />
     <Compile Include="Pantallas\Club\AñadirClub.cs">
@@ -122,6 +139,7 @@
     <Compile Include="Servicios\ClubService.cs" />
     <Compile Include="Servicios\NadadorService.cs" />
     <Compile Include="Servicios\ProfesorService.cs" />
+    <Compile Include="Servicios\TorneoService.cs" />
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Club\ListarClubs.resx">
       <DependentUpon>ListarClubs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Torneo\Inscripcion.resx">
+      <DependentUpon>Inscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Loguin\Loguin.resx">
       <DependentUpon>Loguin.cs</DependentUpon>
@@ -154,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Nadador\Nadador.resx">
       <DependentUpon>Nadador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Torneo\TorneoHome.resx">
+      <DependentUpon>TorneoHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

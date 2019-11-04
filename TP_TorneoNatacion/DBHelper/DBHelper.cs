@@ -12,10 +12,14 @@ namespace TP_TorneoNatacion
     {
         private string string_conexion;
         private static DBHelper instance = new DBHelper();
+        SqlConnection connection;
+        SqlTransaction transaction;
 
-        private DBHelper()
+        public DBHelper()
         {
+            connection = new SqlConnection();
             string_conexion = "Data Source=DESKTOP-TV45VP8;Initial Catalog=TorneoNatacion;Integrated Security=True";
+            connection.ConnectionString = string_conexion;
         }
 
         public static DBHelper getDBHelper()
@@ -25,52 +29,43 @@ namespace TP_TorneoNatacion
             return instance;
         }
 
-
-        // Resumen:
-        //     Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”. Recibe por valor una sentencia sql como string
-        // Devuelve:
-        //      un valor entero con el número de filas afectadas por la sentencia ejecutada
-        // Excepciones:
-        //      System.Data.SqlClient.SqlException:
-        //          El error de conexión se produce:
-        //              a) durante la apertura de la conexión
-        //              b) durante la ejecución del comando.
-
-        public int ejecutarSQL(string strSql)
+        public void BegingTransaction()
         {
-            int afectadas = 0;
-            SqlConnection cnn = new SqlConnection();
-            SqlCommand cmd = new SqlCommand();
-            SqlTransaction t = null;
+            if(connection.State == ConnectionState.Open)
+            {
+                transaction = connection.BeginTransaction();
+            }
+        }
 
-            try
-            {
-                cnn.ConnectionString = string_conexion;
-                cnn.Open();
-                //comienzo de transaccion...
-                t = cnn.BeginTransaction();
-                cmd.Connection = cnn;
-                cmd.CommandText = strSql;
-                cmd.Transaction = t;
-                afectadas = cmd.ExecuteNonQuery();
-                //Commit de transacción...
-                t.Commit();
+        public void commit()
+        {
+            if(transaction != null){
+                transaction.Commit();
             }
-            catch (Exception ex)
-            {
-                if (t != null)
-                {
-                    t.Rollback();
-                    afectadas = 0;
-                }
-                throw ex;
-            }
-            finally
-            {
-                this.CloseConnection(cnn);
-            }
+        }
 
-            return afectadas;
+        public void Rollback()
+        {
+            if(transaction != null)
+            {
+                transaction.Rollback();
+            }
+        }
+
+        public void Open()
+        {
+            if(connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+            }
+        }
+
+        public void Close()
+        {
+            if(connection.State != ConnectionState.Closed)
+            {
+                connection.Close();
+            }
         }
 
 
