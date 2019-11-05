@@ -59,17 +59,17 @@
     <Compile Include="Modelos\InscripcionModel.cs" />
     <Compile Include="Modelos\Profesor.cs" />
     <Compile Include="Modelos\TorneoModel.cs" />
-    <Compile Include="Pantallas\Torneo\Inscripcion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pantallas\Torneo\Inscripcion.Designer.cs">
-      <DependentUpon>Inscripcion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pantallas\Nadador\Especialidad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pantallas\Nadador\Especialidad.Designer.cs">
       <DependentUpon>Especialidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Torneo\Resultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Torneo\Resultados.Designer.cs">
+      <DependentUpon>Resultados.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\Torneo\TorneoHome.cs">
       <SubType>Form</SubType>
@@ -155,9 +155,6 @@
     <EmbeddedResource Include="Pantallas\Club\ListarClubs.resx">
       <DependentUpon>ListarClubs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\Torneo\Inscripcion.resx">
-      <DependentUpon>Inscripcion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Loguin\Loguin.resx">
       <DependentUpon>Loguin.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Nadador\Nadador.resx">
       <DependentUpon>Nadador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Torneo\Resultados.resx">
+      <DependentUpon>Resultados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Torneo\TorneoHome.resx">
       <DependentUpon>TorneoHome.cs</DependentUpon>

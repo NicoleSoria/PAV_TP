@@ -67,5 +67,22 @@ namespace TP_TorneoNatacion.Servicios
             }
 
         }
+
+        public DataTable obtenerParticipantes()
+        {
+            string consulta = "SELECT t.fecha Fecha, n.Nombre Nombre, e.Nombre Especialidad" +
+                              " FROM Torneo as t, Inscripto as i, Nadadores as n, Especialidades as e, NadadorXEspecialidad as en " +
+                              " WHERE t.id_Torneo = i.id_Torneo AND n.id_Nadador = i.id_Nadador " +
+                              "  AND en.id_Nadador = n.id_Nadador AND e.id_Especialidad = en.id_Especialidad";
+
+            var resultado = DBHelper.getDBHelper().ConsultaSQL(consulta);
+
+            return resultado;
+        }
+
+        //public bool registrarResultado()
+        //{
+        //    string consulta = " UPDATE "
+        //}
     }
 }

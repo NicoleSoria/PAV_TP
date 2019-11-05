@@ -37,5 +37,5 @@ D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.exe
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.pdb
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.Pantallas.Nadador.Especialidad.resources
-D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.Pantallas.Inscripcion.Inscripcion.resources
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.Pantallas.Torneo.TorneoHome.resources
+D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.Pantallas.Torneo.Resultados.resources

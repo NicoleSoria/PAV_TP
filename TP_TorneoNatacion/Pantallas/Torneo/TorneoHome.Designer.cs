@@ -34,7 +34,9 @@
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.grillaEspecSeleccionadas = new System.Windows.Forms.DataGridView();
+            this.Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grillaEspecialidades = new System.Windows.Forms.DataGridView();
+            this.Agregar_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnInscribir = new System.Windows.Forms.Button();
             this.cmbTorneo = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -45,14 +47,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Agregar_Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grillaParticipantes = new System.Windows.Forms.DataGridView();
+            this.btnRegResultado = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Resultado = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaEspecSeleccionadas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaEspecialidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaNadador)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaParticipantes)).BeginInit();
+            this.Resultado.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -100,7 +111,7 @@
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(320, 305);
+            this.btnQuitar.Location = new System.Drawing.Point(320, 339);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(51, 24);
             this.btnQuitar.TabIndex = 36;
@@ -110,7 +121,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(320, 264);
+            this.btnAgregar.Location = new System.Drawing.Point(320, 298);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(53, 24);
             this.btnAgregar.TabIndex = 35;
@@ -123,20 +134,30 @@
             this.grillaEspecSeleccionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grillaEspecSeleccionadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Especialidad});
-            this.grillaEspecSeleccionadas.Location = new System.Drawing.Point(419, 247);
+            this.grillaEspecSeleccionadas.Location = new System.Drawing.Point(419, 281);
             this.grillaEspecSeleccionadas.Name = "grillaEspecSeleccionadas";
             this.grillaEspecSeleccionadas.Size = new System.Drawing.Size(237, 114);
             this.grillaEspecSeleccionadas.TabIndex = 34;
+            // 
+            // Especialidad
+            // 
+            this.Especialidad.HeaderText = "Especialidad";
+            this.Especialidad.Name = "Especialidad";
             // 
             // grillaEspecialidades
             // 
             this.grillaEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grillaEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Agregar_Especialidad});
-            this.grillaEspecialidades.Location = new System.Drawing.Point(35, 247);
+            this.grillaEspecialidades.Location = new System.Drawing.Point(35, 281);
             this.grillaEspecialidades.Name = "grillaEspecialidades";
             this.grillaEspecialidades.Size = new System.Drawing.Size(243, 114);
             this.grillaEspecialidades.TabIndex = 33;
+            // 
+            // Agregar_Especialidad
+            // 
+            this.Agregar_Especialidad.HeaderText = "Especialidad";
+            this.Agregar_Especialidad.Name = "Agregar_Especialidad";
             // 
             // btnInscribir
             // 
@@ -151,7 +172,7 @@
             // cmbTorneo
             // 
             this.cmbTorneo.FormattingEnabled = true;
-            this.cmbTorneo.Location = new System.Drawing.Point(114, 167);
+            this.cmbTorneo.Location = new System.Drawing.Point(114, 208);
             this.cmbTorneo.Name = "cmbTorneo";
             this.cmbTorneo.Size = new System.Drawing.Size(121, 21);
             this.cmbTorneo.TabIndex = 30;
@@ -178,7 +199,7 @@
             this.grillaNadador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grillaNadador.Location = new System.Drawing.Point(35, 89);
             this.grillaNadador.Name = "grillaNadador";
-            this.grillaNadador.Size = new System.Drawing.Size(630, 61);
+            this.grillaNadador.Size = new System.Drawing.Size(630, 90);
             this.grillaNadador.TabIndex = 26;
             // 
             // label4
@@ -193,7 +214,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 220);
+            this.label3.Location = new System.Drawing.Point(73, 254);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 24;
@@ -202,7 +223,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 167);
+            this.label2.Location = new System.Drawing.Point(54, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 23;
@@ -219,6 +240,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Resultado);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.grillaParticipantes);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -227,21 +251,87 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Agregar_Especialidad
+            // grillaParticipantes
             // 
-            this.Agregar_Especialidad.HeaderText = "Especialidad";
-            this.Agregar_Especialidad.Name = "Agregar_Especialidad";
+            this.grillaParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaParticipantes.Location = new System.Drawing.Point(6, 86);
+            this.grillaParticipantes.Name = "grillaParticipantes";
+            this.grillaParticipantes.Size = new System.Drawing.Size(531, 368);
+            this.grillaParticipantes.TabIndex = 1;
             // 
-            // Especialidad
+            // btnRegResultado
             // 
-            this.Especialidad.HeaderText = "Especialidad";
-            this.Especialidad.Name = "Especialidad";
+            this.btnRegResultado.Location = new System.Drawing.Point(60, 179);
+            this.btnRegResultado.Name = "btnRegResultado";
+            this.btnRegResultado.Size = new System.Drawing.Size(139, 49);
+            this.btnRegResultado.TabIndex = 2;
+            this.btnRegResultado.Text = "Registrar Resultado";
+            this.btnRegResultado.UseVisualStyleBackColor = true;
+            this.btnRegResultado.Click += new System.EventHandler(this.BtnRegResultado_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(187, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(403, 42);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Torneo - participantes";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(99, 114);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 37;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(39, 117);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Posicion";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(99, 59);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 35;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(36, 62);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 13);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Tiempo";
+            // 
+            // Resultado
+            // 
+            this.Resultado.Controls.Add(this.textBox1);
+            this.Resultado.Controls.Add(this.textBox2);
+            this.Resultado.Controls.Add(this.btnRegResultado);
+            this.Resultado.Controls.Add(this.label6);
+            this.Resultado.Controls.Add(this.label7);
+            this.Resultado.Location = new System.Drawing.Point(557, 98);
+            this.Resultado.Name = "Resultado";
+            this.Resultado.Size = new System.Drawing.Size(232, 278);
+            this.Resultado.TabIndex = 38;
+            this.Resultado.TabStop = false;
+            this.Resultado.Text = "Resultado";
             // 
             // TorneoHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 575);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(825, 575);
             this.Controls.Add(this.tabControl1);
             this.Name = "TorneoHome";
             this.Text = "TorneoHome";
@@ -252,6 +342,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.grillaEspecSeleccionadas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaEspecialidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaNadador)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaParticipantes)).EndInit();
+            this.Resultado.ResumeLayout(false);
+            this.Resultado.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -277,5 +372,13 @@
         private System.Windows.Forms.DataGridView grillaEspecSeleccionadas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Especialidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Agregar_Especialidad;
+        private System.Windows.Forms.Button btnRegResultado;
+        private System.Windows.Forms.DataGridView grillaParticipantes;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox Resultado;
     }
 }

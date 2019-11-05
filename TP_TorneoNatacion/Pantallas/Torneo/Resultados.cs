@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TP_TorneoNatacion.Pantallas.Inscripcion
+namespace TP_TorneoNatacion.Pantallas.Torneo
 {
-    public partial class Inscripcion : Form
+    public partial class Resultados : Form
     {
-        public Inscripcion()
+        public Resultados()
         {
             InitializeComponent();
         }
-
-
-       
-
-
     }
 }
