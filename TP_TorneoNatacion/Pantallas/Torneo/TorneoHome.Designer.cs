@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Reportes = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnQuitar = new System.Windows.Forms.Button();
@@ -47,34 +47,38 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.grillaParticipantes = new System.Windows.Forms.DataGridView();
-            this.btnRegResultado = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.Resultado = new System.Windows.Forms.GroupBox();
-            this.tabControl1.SuspendLayout();
+            this.txtTiempo = new System.Windows.Forms.TextBox();
+            this.txtPosicion = new System.Windows.Forms.TextBox();
+            this.btnRegResultado = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.grillaParticipantes = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Reportes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaEspecSeleccionadas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaEspecialidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaNadador)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaParticipantes)).BeginInit();
             this.Resultado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaParticipantes)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // Reportes
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(803, 504);
-            this.tabControl1.TabIndex = 0;
+            this.Reportes.Controls.Add(this.tabPage1);
+            this.Reportes.Controls.Add(this.tabPage2);
+            this.Reportes.Controls.Add(this.tabPage3);
+            this.Reportes.Location = new System.Drawing.Point(12, 12);
+            this.Reportes.Name = "Reportes";
+            this.Reportes.SelectedIndex = 0;
+            this.Reportes.Size = new System.Drawing.Size(803, 504);
+            this.Reportes.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -251,13 +255,33 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // grillaParticipantes
+            // Resultado
             // 
-            this.grillaParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaParticipantes.Location = new System.Drawing.Point(6, 86);
-            this.grillaParticipantes.Name = "grillaParticipantes";
-            this.grillaParticipantes.Size = new System.Drawing.Size(531, 368);
-            this.grillaParticipantes.TabIndex = 1;
+            this.Resultado.Controls.Add(this.txtTiempo);
+            this.Resultado.Controls.Add(this.txtPosicion);
+            this.Resultado.Controls.Add(this.btnRegResultado);
+            this.Resultado.Controls.Add(this.label6);
+            this.Resultado.Controls.Add(this.label7);
+            this.Resultado.Location = new System.Drawing.Point(557, 98);
+            this.Resultado.Name = "Resultado";
+            this.Resultado.Size = new System.Drawing.Size(232, 278);
+            this.Resultado.TabIndex = 38;
+            this.Resultado.TabStop = false;
+            this.Resultado.Text = "Resultado";
+            // 
+            // txtTiempo
+            // 
+            this.txtTiempo.Location = new System.Drawing.Point(99, 59);
+            this.txtTiempo.Name = "txtTiempo";
+            this.txtTiempo.Size = new System.Drawing.Size(100, 20);
+            this.txtTiempo.TabIndex = 35;
+            // 
+            // txtPosicion
+            // 
+            this.txtPosicion.Location = new System.Drawing.Point(99, 114);
+            this.txtPosicion.Name = "txtPosicion";
+            this.txtPosicion.Size = new System.Drawing.Size(100, 20);
+            this.txtPosicion.TabIndex = 37;
             // 
             // btnRegResultado
             // 
@@ -268,6 +292,24 @@
             this.btnRegResultado.Text = "Registrar Resultado";
             this.btnRegResultado.UseVisualStyleBackColor = true;
             this.btnRegResultado.Click += new System.EventHandler(this.BtnRegResultado_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(39, 117);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Posicion";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(36, 62);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 13);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Tiempo";
             // 
             // label5
             // 
@@ -280,51 +322,34 @@
             this.label5.TabIndex = 27;
             this.label5.Text = "Torneo - participantes";
             // 
-            // textBox2
+            // grillaParticipantes
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 114);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 37;
+            this.grillaParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaParticipantes.Location = new System.Drawing.Point(6, 86);
+            this.grillaParticipantes.Name = "grillaParticipantes";
+            this.grillaParticipantes.Size = new System.Drawing.Size(531, 368);
+            this.grillaParticipantes.TabIndex = 1;
             // 
-            // label6
+            // tabPage3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 117);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Posicion";
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(795, 478);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // button1
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 35;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 62);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 13);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Tiempo";
-            // 
-            // Resultado
-            // 
-            this.Resultado.Controls.Add(this.textBox1);
-            this.Resultado.Controls.Add(this.textBox2);
-            this.Resultado.Controls.Add(this.btnRegResultado);
-            this.Resultado.Controls.Add(this.label6);
-            this.Resultado.Controls.Add(this.label7);
-            this.Resultado.Location = new System.Drawing.Point(557, 98);
-            this.Resultado.Name = "Resultado";
-            this.Resultado.Size = new System.Drawing.Size(232, 278);
-            this.Resultado.TabIndex = 38;
-            this.Resultado.TabStop = false;
-            this.Resultado.Text = "Resultado";
+            this.button1.Location = new System.Drawing.Point(43, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 55);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Generar Reporte";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TorneoHome
             // 
@@ -332,10 +357,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(825, 575);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.Reportes);
             this.Name = "TorneoHome";
             this.Text = "TorneoHome";
-            this.tabControl1.ResumeLayout(false);
+            this.Reportes.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -344,16 +369,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.grillaNadador)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaParticipantes)).EndInit();
             this.Resultado.ResumeLayout(false);
             this.Resultado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaParticipantes)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl Reportes;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -375,10 +401,12 @@
         private System.Windows.Forms.Button btnRegResultado;
         private System.Windows.Forms.DataGridView grillaParticipantes;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPosicion;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTiempo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox Resultado;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button button1;
     }
 }

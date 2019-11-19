@@ -217,5 +217,45 @@ namespace TP_TorneoNatacion
             }
 
         }
+
+        public DataTable GenerarReporte(string fecha)
+        {
+            string strSql = "SELECT Nadadores.nombre AS Nadador, Clubs.nombre AS Club, Profesores.nombre AS Profesor, Especialidades.nombre AS Especialidad " +
+                            "FROM Clubs INNER JOIN" +
+                         " Nadadores ON Clubs.id_Club = Nadadores.id_Club INNER JOIN " +
+                         " Inscripto ON Nadadores.id_Nadador = Inscripto.id_Nadador INNER JOIN " +
+                         " NadadorXEspecialidad ON Nadadores.id_Nadador = NadadorXEspecialidad.id_Nadador INNER JOIN " +
+                         " Especialidades ON NadadorXEspecialidad.id_Especialidad = Especialidades.id_Especialidad INNER JOIN " +
+                         " Profesores ON Nadadores.id_Profesor = Profesores.id_Profesor INNER JOIN " +
+                         " Torneo ON Inscripto.id_Torneo = Torneo.id_Torneo" +
+                         " WHERE Torneo.fecha = @fecha" +
+                         " ORDER BY Nombre Nadador ";
+
+
+
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                cnn.ConnectionString = string_conexion;
+                cnn.Open();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = strSql;
+                cmd.Parameters.AddWithValue("@fecha", fecha);
+                tabla.Load(cmd.ExecuteReader());
+                return tabla;
+            }
+            catch (SqlException ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                this.CloseConnection(cnn);
+            }
+        }
     }
 }

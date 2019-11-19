@@ -11,6 +11,29 @@ namespace TP_TorneoNatacion.Servicios
     class TorneoService
     {
 
+        public List<TorneoModel> buscarTorneo(DateTime fecha)
+        {
+            List<TorneoModel> listaTorneo = new List<TorneoModel>();
+            var consulta = "SELECT * FROM Torneo WHERE fecha = @param1";
+
+            var resultado = DBHelper.getDBHelper().ConsultarSQLConParametros(consulta, new object[] { fecha });
+
+            if (resultado.Rows.Count > 0)
+            {
+                foreach (DataRow row in resultado.Rows)
+                {
+                    TorneoModel encontradoTorneo = new TorneoModel();
+
+                    encontradoTorneo.id_Torneo = Convert.ToInt32(row[0]);
+                    encontradoTorneo.fecha = Convert.ToDateTime(row[1]);
+
+                    listaTorneo.Add(encontradoTorneo);
+
+                }
+            }
+            return listaTorneo;
+        }
+
         public bool guardarInscripcion(InscripcionModel inscripcion)
         {
 
@@ -70,7 +93,7 @@ namespace TP_TorneoNatacion.Servicios
 
         public DataTable obtenerParticipantes()
         {
-            string consulta = "SELECT t.fecha Fecha, n.Nombre Nombre, e.Nombre Especialidad" +
+            string consulta = "SELECT t.fecha Fecha, n.Nombre Nombre, e.Nombre Especialidad, i.posicion, i.tiempo" +
                               " FROM Torneo as t, Inscripto as i, Nadadores as n, Especialidades as e, NadadorXEspecialidad as en " +
                               " WHERE t.id_Torneo = i.id_Torneo AND n.id_Nadador = i.id_Nadador " +
                               "  AND en.id_Nadador = n.id_Nadador AND e.id_Especialidad = en.id_Especialidad";
@@ -80,9 +103,42 @@ namespace TP_TorneoNatacion.Servicios
             return resultado;
         }
 
-        //public bool registrarResultado()
-        //{
-        //    string consulta = " UPDATE "
-        //}
+        public bool registrarResultado(int id_Torneo, int id_Nadador, int posicion, decimal tiempo)
+        {
+            DBHelper dbHelper = new DBHelper();
+
+            try
+            {
+                dbHelper.Open();
+
+                dbHelper.BegingTransaction();
+
+                string consulta = " UPDATE Inscripto SET " +
+                               " posicion = @param1 ," +
+                               " tiempo = @param2 " +
+                               " WHERE id_Torneo = @param3 AND id_Nadador = @param4 ";
+
+                var resultado = DBHelper.getDBHelper().ejecutarSQLParametros(consulta, new object[] { posicion, tiempo, id_Torneo, id_Nadador });
+
+                if (resultado != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                dbHelper.Rollback();
+                return false;
+            }
+            finally
+            {
+                dbHelper.Close();
+            }
+
+        }
     }
 }

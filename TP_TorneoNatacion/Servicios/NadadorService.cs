@@ -45,7 +45,11 @@ namespace TP_TorneoNatacion.Servicios
         public bool deleteNadador(int id)
         {
 
-            var consulta = " DELETE FROM Nadadores WHERE id_Nadador = @param1";
+            var consulta = " DELETE FROM Nadadores WHERE id_Nadador = @param1 ";
+
+           
+
+    
 
             var resultado = DBHelper.getDBHelper().ejecutarSQLParametros(consulta, new object[] { id });
 

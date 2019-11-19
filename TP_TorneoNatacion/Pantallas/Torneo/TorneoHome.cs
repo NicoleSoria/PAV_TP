@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_TorneoNatacion.Modelos;
+using TP_TorneoNatacion.Pantallas.Reportes;
 using TP_TorneoNatacion.Servicios;
 
 namespace TP_TorneoNatacion.Pantallas.Torneo
@@ -134,6 +135,59 @@ namespace TP_TorneoNatacion.Pantallas.Torneo
             grillaParticipantes.DataSource = resultado;
         }
 
+        public void registrarResultados()
+        {
+            DataGridViewRow seleccionado = grillaParticipantes.CurrentRow;
+            int id_Nadador = 0;
+            int id_Torneo = 0;
+            int posicion;
+            decimal tiempo;
+
+
+            if (txtPosicion.Text.Length == 0)
+            {
+                posicion = (int)seleccionado.Cells["posicion"].Value;
+            }
+            else
+            {
+                posicion = Convert.ToInt32(txtPosicion.Text);
+            }
+
+            if (txtTiempo.Text.Length == 0)
+            {
+                tiempo = (int)seleccionado.Cells["tiempo"].Value;
+            }
+            else
+            {
+                tiempo = Convert.ToDecimal(txtTiempo.Text);
+            }
+
+
+            List<NadadorModel> nadadorEncontrado = nadadorService.buscarNadador(seleccionado.Cells["Nombre"].Value.ToString());
+
+            foreach(NadadorModel nadador in nadadorEncontrado)
+            {
+                id_Nadador = nadador.id_Nadador;
+            }
+
+            List<TorneoModel> resultadoToreno = torneoService.buscarTorneo(Convert.ToDateTime(seleccionado.Cells["Fecha"].Value));
+
+            foreach (TorneoModel torneo in resultadoToreno)
+            {
+                id_Torneo = torneo.id_Torneo;
+            }
+
+            var resultadoSaveResultado = torneoService.registrarResultado(id_Torneo, id_Nadador, posicion, tiempo);
+
+            if (resultadoSaveResultado)
+            {
+                MessageBox.Show("Guardado con exito", "", MessageBoxButtons.OK);
+                cargarInscriptos();
+                txtPosicion.Clear();
+                txtTiempo.Clear();
+            }
+        }
+
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             buscarNadador();
@@ -156,7 +210,14 @@ namespace TP_TorneoNatacion.Pantallas.Torneo
 
         private void BtnRegResultado_Click(object sender, EventArgs e)
         {
+            registrarResultados();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var reporteInscriptos = new GenerarReporteInscriptos();
+
+            reporteInscriptos.Show();
         }
     }
 }
