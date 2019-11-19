@@ -91,11 +91,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ConjuntoDatos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\Reportes\GenerarReporteInscriptos.cs">
+    <Compile Include="Pantallas\Reportes\GenerarReporteInscriotos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\Reportes\GenerarReporteInscriptos.Designer.cs">
-      <DependentUpon>GenerarReporteInscriptos.cs</DependentUpon>
+    <Compile Include="Pantallas\Reportes\GenerarReporteInscriotos.Designer.cs">
+      <DependentUpon>GenerarReporteInscriotos.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\Torneo\Resultados.cs">
       <SubType>Form</SubType>
@@ -206,10 +206,10 @@
     <EmbeddedResource Include="Pantallas\Nadador\Nadador.resx">
       <DependentUpon>Nadador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\Reportes\GenerarReporteInscriptos.resx">
-      <DependentUpon>GenerarReporteInscriptos.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\Reportes\GenerarReporteInscriotos.resx">
+      <DependentUpon>GenerarReporteInscriotos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\Reportes\Informe.rdlc" />
+    <EmbeddedResource Include="Pantallas\Reportes\InformeInscriptos.rdlc" />
     <EmbeddedResource Include="Pantallas\Torneo\Resultados.resx">
       <DependentUpon>Resultados.cs</DependentUpon>
     </EmbeddedResource>

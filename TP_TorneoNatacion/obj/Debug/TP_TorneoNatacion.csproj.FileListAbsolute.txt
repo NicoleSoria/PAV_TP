@@ -38,7 +38,6 @@ D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.Pantallas.Nadador.Especialidad.resources
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.Pantallas.Torneo.TorneoHome.resources
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.Pantallas.Torneo.Resultados.resources
-D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.Pantallas.Reportes.GenerarReporteInscriptos.resources
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\RdlCompile.cache
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\RdlCompile.compiled
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\bin\Debug\SqlServerTypes\x64\msvcr120.dll
@@ -100,3 +99,4 @@ D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\bin\Debug\
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.csproj.CopyComplete
+D:\Tamara\Documents\UTN\Electivas\PAV 1\REPO\PAV_TP\TP_TorneoNatacion\obj\Debug\TP_TorneoNatacion.Pantallas.Reportes.GenerarReporteInscriotos.resources

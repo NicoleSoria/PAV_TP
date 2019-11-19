@@ -22,6 +22,7 @@ namespace TP_TorneoNatacion.Pantallas.Torneo
         public TorneoHome()
         {
             InitializeComponent();
+
             nadadorService = new NadadorService();
             torneoService = new TorneoService();
             especialidadService = new EspecialidadService();
@@ -122,6 +123,7 @@ namespace TP_TorneoNatacion.Pantallas.Torneo
             if(resultado == true)
             {
                 MessageBox.Show("Incripcion realizada con exito", "", MessageBoxButtons.OK);
+                txtNadador.Clear();
                 cargarInscriptos();
 
             }
@@ -204,7 +206,7 @@ namespace TP_TorneoNatacion.Pantallas.Torneo
         }
 
         private void BtnInscribir_Click(object sender, EventArgs e)
-        {
+        { 
             guardarIncripcion();
         }
 
@@ -215,7 +217,7 @@ namespace TP_TorneoNatacion.Pantallas.Torneo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var reporteInscriptos = new GenerarReporteInscriptos();
+            var reporteInscriptos = new GenerarReporteInscriotos();
 
             reporteInscriptos.Show();
         }
