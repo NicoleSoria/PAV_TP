@@ -21,7 +21,7 @@ namespace TP_TorneoNatacion.Pantallas.Reportes
 
         public void cargarTorneos()
         {
-            string consulta = "SELECT * FROM Torneo";
+            string consulta = "SELECT * FROM Torneo WHERE Torneo.fecha > getdate()";
 
             var resultado = DBHelper.getDBHelper().ConsultaSQL(consulta);
 
@@ -35,7 +35,7 @@ namespace TP_TorneoNatacion.Pantallas.Reportes
         {
             // TODO: esta línea de código carga datos en la tabla 'ConjuntoDatos.DataTable1' Puede moverla o quitarla según sea necesario.
             this.DataTable1TableAdapter.Fill(this.ConjuntoDatos.DataTable1, "2019/11/15");
-
+            
             this.reportViewer1.RefreshReport();
         }
 

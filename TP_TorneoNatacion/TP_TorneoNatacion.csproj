@@ -105,17 +105,11 @@
     <Compile Include="Pantallas\Reportes\GenerarReporteInscriotos.Designer.cs">
       <DependentUpon>GenerarReporteInscriotos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\Reportes\ReporteResultados.cs">
+    <Compile Include="Pantallas\Reportes\ResultadosReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\Reportes\ReporteResultados.Designer.cs">
-      <DependentUpon>ReporteResultados.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pantallas\Torneo\Resultados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pantallas\Torneo\Resultados.Designer.cs">
-      <DependentUpon>Resultados.cs</DependentUpon>
+    <Compile Include="Pantallas\Reportes\ResultadosReporte.Designer.cs">
+      <DependentUpon>ResultadosReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\Torneo\TorneoHome.cs">
       <SubType>Form</SubType>
@@ -225,11 +219,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Reportes\InformeInscriptos.rdlc" />
     <EmbeddedResource Include="Pantallas\Reportes\InformeResultados.rdlc" />
-    <EmbeddedResource Include="Pantallas\Reportes\ReporteResultados.resx">
-      <DependentUpon>ReporteResultados.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\Torneo\Resultados.resx">
-      <DependentUpon>Resultados.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\Reportes\ResultadosReporte.resx">
+      <DependentUpon>ResultadosReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Torneo\TorneoHome.resx">
       <DependentUpon>TorneoHome.cs</DependentUpon>

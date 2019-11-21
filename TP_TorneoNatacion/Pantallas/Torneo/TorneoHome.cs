@@ -34,7 +34,7 @@ namespace TP_TorneoNatacion.Pantallas.Torneo
 
         public void cargarTorneos()
         {
-            string consulta = "SELECT * FROM Torneo";
+            string consulta = "SELECT * FROM Torneo WHERE Torneo.fecha > getdate()";
 
             var resultado = DBHelper.getDBHelper().ConsultaSQL(consulta);
 
@@ -224,7 +224,7 @@ namespace TP_TorneoNatacion.Pantallas.Torneo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var reporteResultados = new ReporteResultados();
+            var reporteResultados = new ResultadosReporte();
 
             reporteResultados.Show();
         }
