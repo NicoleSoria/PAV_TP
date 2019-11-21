@@ -57,11 +57,11 @@
             this.grillaParticipantes = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.TorneoTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -361,6 +361,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Reporte resultados";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label9.Location = new System.Drawing.Point(31, 38);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(339, 42);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Resultados torneo";
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -370,6 +381,7 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Generar Reporte";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
@@ -383,18 +395,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reporte inscriptos";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(57, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 70);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Generar Reporte";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -406,16 +406,17 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "Inscriptos";
             // 
-            // label9
+            // button1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(31, 38);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(339, 42);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Resultados torneo";
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(57, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(164, 70);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Generar Reporte";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TorneoHome
             // 
